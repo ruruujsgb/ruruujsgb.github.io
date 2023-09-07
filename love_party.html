@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Love Party</title>
+
+<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: $card-bg;
+  background-clip: border-box;
+  border: $card-border-width solid $card-border-color;
+  @include border-radius($card-border-radius);
+.card {
+  background-color: rgba(155, 163, 171, 0.9); }
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Ruruu Joki Garden AU</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="love_party.html">Love Party</a>
+</li>
+<li>
+  <a href="contactus.html">Contact Us</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<div id="love_party" class="section level1">
+<h1>Love Party</h1>
+<p>(Frequently Asked Questions)</p>
+<hr />
+<div id="mas-latest-release" class="section level2">
+</div>
+<div class="card">
+            <div class="card-header">
+                <h2>Love Party Guide</h2>
+            </div>
+            <div class="table-responsive" style="max-height: 450px;">
+                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <th rowspan="2">Ring</th>
+                            <th rowspan="2">Level</th>
+                            <th rowspan="2">Couple Points</th>
+                            <th colspan="3">Love Party Mode/Song</th>
+                        </tr>
+                        <tr>
+                            <th>1st Attempt</th>
+                            <th>2nd Attempt</th>
+                            <th>3rd Attempt</th>
+                        </tr>
+
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper"><img src="img/ring/iconring_01.png" class="iconring" style=""></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_01.png" class="textring" alt="Lavender"></div>
+                                <span>Lavender</span>
+                            </th>
+                            <td>1</td>
+                            <td class="bg-warning">0</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Couple Dance - 4 Direction
+                                            <br>Wedding Day
+                                            <br>130bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 15
+                                            <br>Score: 200,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 10
+                                            <br>Score: 150,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 2
+                                            <br>Perfect: 5
+                                            <br>Score: 100,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>120</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper"><img src="img/ring/iconring_02.png" class="iconring" style=""></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_02.png" class="textring" alt="Daisy"></div>
+                                <span>Daisy</span>
+                            </th>
+                            <td>6</td>
+                            <td class="bg-warning">300</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 4 Direction
+                                            <br>Opera - Cha Cha Cha
+                                            <br>106bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 0
+                                            <br>Score: 180,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 2
+                                            <br>Perfect: 10
+                                            <br>Score: 150,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 1
+                                            <br>Perfect: 5
+                                            <br>Score: 120,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>420</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>560</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>720</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>900</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper"><img src="img/ring/iconring_03.png" class="iconring" style=""></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_03.png" class="textring" alt="Saffron"></div>
+                                <span>Saffron</span>
+                            </th>
+                            <td>11</td>
+                            <td class="bg-warning">1,100</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 4 Direction
+                                            <br>Sad Samba - Samba
+                                            <br>120bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 20
+                                            <br>Score: 250,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 15
+                                            <br>Score: 200,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 2
+                                            <br>Perfect: 10
+                                            <br>Score: 150,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>1,320</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>1,560</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>1,820</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>2,100</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper"><img src="img/ring/iconring_04.png" class="iconring" style=""></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_04.png" class="textring" alt="Cuphea"></div>
+                                <span>Cuphea</span>
+                            </th>
+                            <td>16</td>
+                            <td class="bg-warning">2,400</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 4 Direction
+                                            <br>Get Out - Samba
+                                            <br>120bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 15
+                                            <br>Score: 200,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 12
+                                            <br>Score: 180,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 2
+                                            <br>Perfect: 10
+                                            <br>Score: 150,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>2,720</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>3,060</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>3,420</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>3,800</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper"><img src="img/ring/iconring_05.png" class="iconring" style=""></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_05.png" class="textring" alt="Aster"></div>
+                                <span>Aster</span>
+                            </th>
+                            <td>21</td>
+                            <td class="bg-warning">4,200</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 4 Direction
+                                            <br>Por Una Cabeza - Paso Doble
+                                            <br>120bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 15
+                                            <br>Score: 200,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 12
+                                            <br>Score: 180,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 2
+                                            <br>Perfect: 10
+                                            <br>Score: 150,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>4,620</td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td>5,060</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>5,520</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>6,000</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper"><img src="img/ring/iconring_06.png" class="iconring" style=""></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_06.png" class="textring" alt="Freesia"></div>
+                                <span>Freesia</span>
+                            </th>
+                            <td>26</td>
+                            <td class="bg-warning">6,500</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 4 Direction
+                                            <br>Feel of the Night - Salsa
+                                            <br>126bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 20
+                                            <br>Score: 230,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 4
+                                            <br>Perfect: 15
+                                            <br>Score: 200,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 11
+                                            <br>Score: 150,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td>7,020</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>7,560</td>
+                        </tr>
+                        <tr>
+                            <td>29</td>
+                            <td>8,120</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>8,700</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper"><img src="img/ring/iconring_07.png" class="iconring" style=""></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_07.png" class="textring" alt="Asphodelus"></div>
+                                <span>Asphodelus</span>
+                            </th>
+                            <td>31</td>
+                            <td class="bg-warning">9,300</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 4 Direction
+                                            <br>Shall We Dance - Samba
+                                            <br>128bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 20
+                                            <br>Score: 230,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 4
+                                            <br>Perfect: 15
+                                            <br>Score: 200,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 12
+                                            <br>Score: 160,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>9,920</td>
+                        </tr>
+                        <tr>
+                            <td>33</td>
+                            <td>10,560</td>
+                        </tr>
+                        <tr>
+                            <td>34</td>
+                            <td>11,220</td>
+                        </tr>
+                        <tr>
+                            <td>35</td>
+                            <td>11,900</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper"><img src="img/ring/iconring_08.png" class="iconring" style=""></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_08.png" class="textring" alt="Caladium"></div>
+                                <span>Caladium</span>
+                            </th>
+                            <td>36</td>
+                            <td class="bg-warning">12,600</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 4 Direction
+                                            <br>Last Summer - Rhumba
+                                            <br>130bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 20
+                                            <br>Score: 200,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 4
+                                            <br>Perfect: 12
+                                            <br>Score: 180,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 10
+                                            <br>Score: 150,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>37</td>
+                            <td>13,320</td>
+                        </tr>
+                        <tr>
+                            <td>38</td>
+                            <td>14,060</td>
+                        </tr>
+                        <tr>
+                            <td>39</td>
+                            <td>14,820</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>15,600</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper"><img src="img/ring/iconring_09.png" class="iconring" style=""></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_09.png" class="textring" alt="Violet"></div>
+                                <span>Violet</span>
+                            </th>
+                            <td>41</td>
+                            <td class="bg-warning">16,400</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 4 Direction
+                                            <br>Cow Boy - Jive
+                                            <br>136bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 20
+                                            <br>Score: 200,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 4
+                                            <br>Perfect: 15
+                                            <br>Score: 180,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 12
+                                            <br>Score: 150,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>42</td>
+                            <td>17,220</td>
+                        </tr>
+                        <tr>
+                            <td>43</td>
+                            <td>18,060</td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                            <td>18,920</td>
+                        </tr>
+                        <tr>
+                            <td>45</td>
+                            <td>19,800</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper"><img src="img/ring/iconring_10.png" class="iconring" style=""></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_10.png" class="textring" alt="Rosemary"></div>
+                                <span>Rosemary</span>
+                            </th>
+                            <td>46</td>
+                            <td class="bg-warning">20,700</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 4 Direction
+                                            <br>Can Can (Acoustic Mix) - Jive
+                                            <br>150bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 6
+                                            <br>Perfect: 30
+                                            <br>Score: 280,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 25
+                                            <br>Score: 250,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 20
+                                            <br>Score: 200,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>47</td>
+                            <td>21,620</td>
+                        </tr>
+                        <tr>
+                            <td>48</td>
+                            <td>22,560</td>
+                        </tr>
+                        <tr>
+                            <td>49</td>
+                            <td>23,520</td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td>24,500</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper"><img src="img/ring/iconring_11.png" class="iconring" style=""></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_11.png" class="textring" alt="Poinsettia"></div>
+                                <span>Poinsettia</span>
+                            </th>
+                            <td>51</td>
+                            <td class="bg-warning">26,520</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 8 Direction
+                                            <br>Can Can (Acoustic Mix) - Jive
+                                            <br>150bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 20
+                                            <br>Score: 350,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 4
+                                            <br>Perfect: 12
+                                            <br>Score: 300,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 10
+                                            <br>Score: 250,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>52</td>
+                            <td>27,620</td>
+                        </tr>
+                        <tr>
+                            <td>53</td>
+                            <td>28,760</td>
+                        </tr>
+                        <tr>
+                            <td>54</td>
+                            <td>30,000</td>
+                        </tr>
+                        <tr>
+                            <td>55</td>
+                            <td>31,420</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper"><img src="img/ring/iconring_12.png" class="iconring" style=""></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_12.png" class="textring" alt="Edelweiss"></div>
+                                <span>Edelweiss</span>
+                            </th>
+                            <td>56</td>
+                            <td class="bg-warning">33,180</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 8 Direction
+                                            <br>Can Can (Acoustic Mix) - Jive
+                                            <br>150bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 6
+                                            <br>Perfect: 20
+                                            <br>Score: 400,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 4
+                                            <br>Perfect: 15
+                                            <br>Score: 350,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 12
+                                            <br>Score: 300,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>57</td>
+                            <td>35,600</td>
+                        </tr>
+                        <tr>
+                            <td>58</td>
+                            <td>39,320</td>
+                        </tr>
+                        <tr>
+                            <td>59</td>
+                            <td>45,620</td>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td>57,060</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                <img src="img/ring/iconring_13_00.png" class="iconring" style=""><img src="img/ring/iconring_13_01.png" class="iconring" style="display: none;"><img src="img/ring/iconring_13_02.png" class="iconring" style="display: none;"><img src="img/ring/iconring_13_03.png" class="iconring" style="display: none;"><img src="img/ring/iconring_13_04.png" class="iconring" style="display: none;"></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_13.png" class="textring" alt="Gladiolus"></div>
+                                <span>Gladiolus</span>
+                            </th>
+                            <td>61</td>
+                            <td class="bg-warning">78,760</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 8 Direction
+                                            <br>Can Can (Acoustic Mix) - Jive
+                                            <br>150bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 6
+                                            <br>Perfect: 30
+                                            <br>Score: 450,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 25
+                                            <br>Score: 400,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 4
+                                            <br>Perfect: 20
+                                            <br>Score: 350,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>62</td>
+                            <td>101,110</td>
+                        </tr>
+                        <tr>
+                            <td>63</td>
+                            <td>124,130</td>
+                        </tr>
+                        <tr>
+                            <td>64</td>
+                            <td>147,840</td>
+                        </tr>
+                        <tr>
+                            <td>65</td>
+                            <td>172,380</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                <img src="img/ring/iconring_14_10.png" class="iconring" style=""><img src="img/ring/iconring_14_11.png" class="iconring" style="display: none;"><img src="img/ring/iconring_14_01.png" class="iconring" style="display: none;"><img src="img/ring/iconring_14_02.png" class="iconring" style="display: none;"><img src="img/ring/iconring_14_03.png" class="iconring" style="display: none;"><img src="img/ring/iconring_14_04.png" class="iconring" style="display: none;"><img src="img/ring/iconring_14_05.png" class="iconring" style="display: none;"><img src="img/ring/iconring_14_06.png" class="iconring" style="display: none;"><img src="img/ring/iconring_14_07.png" class="iconring" style="display: none;"><img src="img/ring/iconring_14_08.png" class="iconring" style="display: none;"><img src="img/ring/iconring_14_09.png" class="iconring" style="display: none;"></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_14.png" class="textring" alt="Iris"></div>
+                                <span>Iris</span>
+                            </th>
+                            <td>66</td>
+                            <td class="bg-warning">197,780</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 8 Direction
+                                            <br>Can Can (Acoustic Mix) - Jive
+                                            <br>150bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 7
+                                            <br>Perfect: 30
+                                            <br>Score: 500,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 6
+                                            <br>Perfect: 25
+                                            <br>Score: 450,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 20
+                                            <br>Score: 400,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>67</td>
+                            <td>224,070</td>
+                        </tr>
+                        <tr>
+                            <td>68</td>
+                            <td>251,280</td>
+                        </tr>
+                        <tr>
+                            <td>69</td>
+                            <td>279,450</td>
+                        </tr>
+                        <tr>
+                            <td>70</td>
+                            <td>308,740</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                <img src="img/ring/iconring_15_11.png" class="iconring" style=""><img src="img/ring/iconring_15_12.png" class="iconring" style="display: none;"><img src="img/ring/iconring_15_13.png" class="iconring" style="display: none;"><img src="img/ring/iconring_15_14.png" class="iconring" style="display: none;"><img src="img/ring/iconring_15_15.png" class="iconring" style="display: none;"><img src="img/ring/iconring_15_01.png" class="iconring" style="display: none;"><img src="img/ring/iconring_15_02.png" class="iconring" style="display: none;"><img src="img/ring/iconring_15_03.png" class="iconring" style="display: none;"><img src="img/ring/iconring_15_04.png" class="iconring" style="display: none;"><img src="img/ring/iconring_15_05.png" class="iconring" style="display: none;"><img src="img/ring/iconring_15_06.png" class="iconring" style="display: none;"><img src="img/ring/iconring_15_07.png" class="iconring" style="display: none;"><img src="img/ring/iconring_15_08.png" class="iconring" style="display: none;"><img src="img/ring/iconring_15_09.png" class="iconring" style="display: none;"><img src="img/ring/iconring_15_10.png" class="iconring" style="display: none;"></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_15.png" class="textring" alt="Artemis"></div>
+                                <span>Artemis</span>
+                            </th>
+                            <td>71</td>
+                            <td class="bg-warning">339,200</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 8 Direction
+                                            <br>Can Can (Acoustic Mix) - Jive
+                                            <br>150bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 7
+                                            <br>Perfect: 35
+                                            <br>Score: 550,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 6
+                                            <br>Perfect: 30
+                                            <br>Score: 500,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 25
+                                            <br>Score: 450,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>72</td>
+                            <td>370,870</td>
+                        </tr>
+                        <tr>
+                            <td>73</td>
+                            <td>403,820</td>
+                        </tr>
+                        <tr>
+                            <td>74</td>
+                            <td>438,090</td>
+                        </tr>
+                        <tr>
+                            <td>75</td>
+                            <td>474,060</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                <img src="img/ring/iconring_16_11.png" class="iconring" style=""><img src="img/ring/iconring_16_12.png" class="iconring" style="display: none;"><img src="img/ring/iconring_16_13.png" class="iconring" style="display: none;"><img src="img/ring/iconring_16_14.png" class="iconring" style="display: none;"><img src="img/ring/iconring_16_15.png" class="iconring" style="display: none;"><img src="img/ring/iconring_16_01.png" class="iconring" style="display: none;"><img src="img/ring/iconring_16_02.png" class="iconring" style="display: none;"><img src="img/ring/iconring_16_03.png" class="iconring" style="display: none;"><img src="img/ring/iconring_16_04.png" class="iconring" style="display: none;"><img src="img/ring/iconring_16_05.png" class="iconring" style="display: none;"><img src="img/ring/iconring_16_06.png" class="iconring" style="display: none;"><img src="img/ring/iconring_16_07.png" class="iconring" style="display: none;"><img src="img/ring/iconring_16_08.png" class="iconring" style="display: none;"><img src="img/ring/iconring_16_09.png" class="iconring" style="display: none;"><img src="img/ring/iconring_16_10.png" class="iconring" style="display: none;"></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_16.png" class="textring" alt="Helios"></div>
+                                <span>Helios</span>
+                            </th>
+                            <td>76</td>
+                            <td class="bg-warning">511,840</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 4 Direction
+                                            <br>Passion - Paso Doble
+                                            <br>170bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 20
+                                            <br>Score: 250,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 4
+                                            <br>Perfect: 15
+                                            <br>Score: 200,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 12
+                                            <br>Score: 150,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>77</td>
+                            <td>551,500</td>
+                        </tr>
+                        <tr>
+                            <td>78</td>
+                            <td>593,150</td>
+                        </tr>
+                        <tr>
+                            <td>79</td>
+                            <td>636,880</td>
+                        </tr>
+                        <tr>
+                            <td>80</td>
+                            <td>683,020</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                <img src="img/ring/iconring_17_11.png" class="iconring" style=""><img src="img/ring/iconring_17_12.png" class="iconring" style="display: none;"><img src="img/ring/iconring_17_01.png" class="iconring" style="display: none;"><img src="img/ring/iconring_17_02.png" class="iconring" style="display: none;"><img src="img/ring/iconring_17_03.png" class="iconring" style="display: none;"><img src="img/ring/iconring_17_04.png" class="iconring" style="display: none;"><img src="img/ring/iconring_17_05.png" class="iconring" style="display: none;"><img src="img/ring/iconring_17_06.png" class="iconring" style="display: none;"><img src="img/ring/iconring_17_07.png" class="iconring" style="display: none;"><img src="img/ring/iconring_17_08.png" class="iconring" style="display: none;"><img src="img/ring/iconring_17_09.png" class="iconring" style="display: none;"><img src="img/ring/iconring_17_10.png" class="iconring" style="display: none;"></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_17.png" class="textring" alt="Cupid"></div>
+                                <span>Cupid</span>
+                            </th>
+                            <td>81</td>
+                            <td class="bg-warning">731,690</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 4 Direction
+                                            <br>Passion - Paso Doble
+                                            <br>170bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 25
+                                            <br>Score: 280,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 4
+                                            <br>Perfect: 20
+                                            <br>Score: 230,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 15
+                                            <br>Score: 180,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>82</td>
+                            <td>783,040</td>
+                        </tr>
+                        <tr>
+                            <td>83</td>
+                            <td>837,220</td>
+                        </tr>
+                        <tr>
+                            <td>84</td>
+                            <td>894,370</td>
+                        </tr>
+                        <tr>
+                            <td>85</td>
+                            <td>955,240</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                <img src="img/ring/iconring_18_11.png" class="iconring" style=""><img src="img/ring/iconring_18_12.png" class="iconring" style="display: none;"><img src="img/ring/iconring_18_01.png" class="iconring" style="display: none;"><img src="img/ring/iconring_18_02.png" class="iconring" style="display: none;"><img src="img/ring/iconring_18_03.png" class="iconring" style="display: none;"><img src="img/ring/iconring_18_04.png" class="iconring" style="display: none;"><img src="img/ring/iconring_18_05.png" class="iconring" style="display: none;"><img src="img/ring/iconring_18_06.png" class="iconring" style="display: none;"><img src="img/ring/iconring_18_07.png" class="iconring" style="display: none;"><img src="img/ring/iconring_18_08.png" class="iconring" style="display: none;"><img src="img/ring/iconring_18_09.png" class="iconring" style="display: none;"><img src="img/ring/iconring_18_10.png" class="iconring" style="display: none;"></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_18.png" class="textring" alt="Athena"></div>
+                                <span>Athena</span>
+                            </th>
+                            <td>86</td>
+                            <td class="bg-warning">1,020,070</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 4 Direction
+                                            <br>Passion - Paso Doble
+                                            <br>170bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 6
+                                            <br>Perfect: 25
+                                            <br>Score: 300,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 20
+                                            <br>Score: 250,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 4
+                                            <br>Perfect: 15
+                                            <br>Score: 200,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>87</td>
+                            <td>1,089,110</td>
+                        </tr>
+                        <tr>
+                            <td>88</td>
+                            <td>1,162,630</td>
+                        </tr>
+                        <tr>
+                            <td>89</td>
+                            <td>1,240,940</td>
+                        </tr>
+                        <tr>
+                            <td>90</td>
+                            <td>1,324,730</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                <img src="img/ring/iconring_19_11.png" class="iconring" style=""><img src="img/ring/iconring_19_12.png" class="iconring" style="display: none;"><img src="img/ring/iconring_19_01.png" class="iconring" style="display: none;"><img src="img/ring/iconring_19_02.png" class="iconring" style="display: none;"><img src="img/ring/iconring_19_03.png" class="iconring" style="display: none;"><img src="img/ring/iconring_19_04.png" class="iconring" style="display: none;"><img src="img/ring/iconring_19_05.png" class="iconring" style="display: none;"><img src="img/ring/iconring_19_06.png" class="iconring" style="display: none;"><img src="img/ring/iconring_19_07.png" class="iconring" style="display: none;"><img src="img/ring/iconring_19_08.png" class="iconring" style="display: none;"><img src="img/ring/iconring_19_09.png" class="iconring" style="display: none;"><img src="img/ring/iconring_19_10.png" class="iconring" style="display: none;"></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_19.png" class="textring" alt="Poseidon"></div>
+                                <span>Poseidon</span>
+                            </th>
+                            <td>91</td>
+                            <td class="bg-warning">1,414,380</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 4 Direction
+                                            <br>Passion - Paso Doble
+                                            <br>170bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 6
+                                            <br>Perfect: 25
+                                            <br>Score: 330,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 20
+                                            <br>Score: 280,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 4
+                                            <br>Perfect: 15
+                                            <br>Score: 230,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>92</td>
+                            <td>1,510,310</td>
+                        </tr>
+                        <tr>
+                            <td>93</td>
+                            <td>1,612,950</td>
+                        </tr>
+                        <tr>
+                            <td>94</td>
+                            <td>1,722,780</td>
+                        </tr>
+                        <tr>
+                            <td>95</td>
+                            <td>1,841,400</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                <img src="img/ring/iconring_20_01.png" class="iconring" style=""><img src="img/ring/iconring_20_02.png" class="iconring" style="display: none;"><img src="img/ring/iconring_20_03.png" class="iconring" style="display: none;"><img src="img/ring/iconring_20_04.png" class="iconring" style="display: none;"><img src="img/ring/iconring_20_05.png" class="iconring" style="display: none;"><img src="img/ring/iconring_20_06.png" class="iconring" style="display: none;"><img src="img/ring/iconring_20_07.png" class="iconring" style="display: none;"><img src="img/ring/iconring_20_08.png" class="iconring" style="display: none;"><img src="img/ring/iconring_20_09.png" class="iconring" style="display: none;"><img src="img/ring/iconring_20_10.png" class="iconring" style="display: none;"></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_20.png" class="textring" alt="Hera"></div>
+                                <span>Hera</span>
+                            </th>
+                            <td>96</td>
+                            <td class="bg-warning">1,950,000</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 4 Direction
+                                            <br>Passion - Paso Doble
+                                            <br>170bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq">Sync: 7
+                                            <br>Perfect: 30
+                                            <br>Score: 350,000
+                                        </td>
+                                        <td class="lpreq">Sync: 6
+                                            <br>Perfect: 25
+                                            <br>Score: 300,000
+                                        </td>
+                                        <td class="lpreq">Sync: 5
+                                            <br>Perfect: 20
+                                            <br>Score: 250,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>97</td>
+                            <td>2,060,000</td>
+                        </tr>
+                        <tr>
+                            <td>98</td>
+                            <td>2,180,000</td>
+                        </tr>
+                        <tr>
+                            <td>99</td>
+                            <td>2,310,000</td>
+                        </tr>
+                        <tr>
+                            <td>100</td>
+                            <td>2,450,000</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                <img src="img/ring/iconring_21_15.png" class="iconring" style=""><img src="img/ring/iconring_21_16.png" class="iconring" style="display: none;"><img src="img/ring/iconring_21_01.png" class="iconring" style="display: none;"><img src="img/ring/iconring_21_02.png" class="iconring" style="display: none;"><img src="img/ring/iconring_21_03.png" class="iconring" style="display: none;"><img src="img/ring/iconring_21_04.png" class="iconring" style="display: none;"><img src="img/ring/iconring_21_05.png" class="iconring" style="display: none;"><img src="img/ring/iconring_21_06.png" class="iconring" style="display: none;"><img src="img/ring/iconring_21_07.png" class="iconring" style="display: none;"><img src="img/ring/iconring_21_08.png" class="iconring" style="display: none;"><img src="img/ring/iconring_21_09.png" class="iconring" style="display: none;"><img src="img/ring/iconring_21_10.png" class="iconring" style="display: none;"><img src="img/ring/iconring_21_11.png" class="iconring" style="display: none;"><img src="img/ring/iconring_21_12.png" class="iconring" style="display: none;"><img src="img/ring/iconring_21_13.png" class="iconring" style="display: none;"><img src="img/ring/iconring_21_14.png" class="iconring" style="display: none;"></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_21.png" class="textring" alt="Anemone"></div>
+                                <span>Anemone</span>
+                            </th>
+                            <td>101</td>
+                            <td class="bg-warning">2,600,000</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 8 Direction
+                                            <br>Passion - Paso Doble
+                                            <br>170bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 20
+                                            <br>Score: 300,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 4
+                                            <br>Perfect: 15
+                                            <br>Score: 250,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 3
+                                            <br>Perfect: 10
+                                            <br>Score: 200,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>102</td>
+                            <td>2,760,000</td>
+                        </tr>
+                        <tr>
+                            <td>103</td>
+                            <td>2,930,000</td>
+                        </tr>
+                        <tr>
+                            <td>104</td>
+                            <td>3,110,000</td>
+                        </tr>
+                        <tr>
+                            <td>105</td>
+                            <td>3,300,000</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                <img src="img/ring/iconring_22_15.png" class="iconring" style=""><img src="img/ring/iconring_22_16.png" class="iconring" style="display: none;"><img src="img/ring/iconring_22_01.png" class="iconring" style="display: none;"><img src="img/ring/iconring_22_02.png" class="iconring" style="display: none;"><img src="img/ring/iconring_22_03.png" class="iconring" style="display: none;"><img src="img/ring/iconring_22_04.png" class="iconring" style="display: none;"><img src="img/ring/iconring_22_05.png" class="iconring" style="display: none;"><img src="img/ring/iconring_22_06.png" class="iconring" style="display: none;"><img src="img/ring/iconring_22_07.png" class="iconring" style="display: none;"><img src="img/ring/iconring_22_08.png" class="iconring" style="display: none;"><img src="img/ring/iconring_22_09.png" class="iconring" style="display: none;"><img src="img/ring/iconring_22_10.png" class="iconring" style="display: none;"><img src="img/ring/iconring_22_11.png" class="iconring" style="display: none;"><img src="img/ring/iconring_22_12.png" class="iconring" style="display: none;"><img src="img/ring/iconring_22_13.png" class="iconring" style="display: none;"><img src="img/ring/iconring_22_14.png" class="iconring" style="display: none;"></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_22.png" class="textring" alt="Hyacinth"></div>
+                                <span>Hyacinth</span>
+                            </th>
+                            <td>106</td>
+                            <td class="bg-warning">3,500,000</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 8 Direction
+                                            <br>Passion - Paso Doble
+                                            <br>170bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 6
+                                            <br>Perfect: 25
+                                            <br>Score: 330,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 20
+                                            <br>Score: 280,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 4
+                                            <br>Perfect: 15
+                                            <br>Score: 230,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>107</td>
+                            <td>3,710,000</td>
+                        </tr>
+                        <tr>
+                            <td>108</td>
+                            <td>3,930,000</td>
+                        </tr>
+                        <tr>
+                            <td>109</td>
+                            <td>4,160,000</td>
+                        </tr>
+                        <tr>
+                            <td>110</td>
+                            <td>4,400,000</td>
+                        </tr>
+                        <tr>
+                            <th class="ring" rowspan="5">
+                                <div class="ring-wrapper">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                <img src="img/ring/iconring_23_15.png" class="iconring" style=""><img src="img/ring/iconring_23_16.png" class="iconring" style="display: none;"><img src="img/ring/iconring_23_01.png" class="iconring" style="display: none;"><img src="img/ring/iconring_23_02.png" class="iconring" style="display: none;"><img src="img/ring/iconring_23_03.png" class="iconring" style="display: none;"><img src="img/ring/iconring_23_04.png" class="iconring" style="display: none;"><img src="img/ring/iconring_23_05.png" class="iconring" style="display: none;"><img src="img/ring/iconring_23_06.png" class="iconring" style="display: none;"><img src="img/ring/iconring_23_07.png" class="iconring" style="display: none;"><img src="img/ring/iconring_23_08.png" class="iconring" style="display: none;"><img src="img/ring/iconring_23_09.png" class="iconring" style="display: none;"><img src="img/ring/iconring_23_10.png" class="iconring" style="display: none;"><img src="img/ring/iconring_23_11.png" class="iconring" style="display: none;"><img src="img/ring/iconring_23_12.png" class="iconring" style="display: none;"><img src="img/ring/iconring_23_13.png" class="iconring" style="display: none;"><img src="img/ring/iconring_23_14.png" class="iconring" style="display: none;"></div>
+                                <div class="ring-wrapper2"><img src="img/ring/textring_23.png" class="textring" alt="Ambrosia"></div>
+                                <span>Ambrosia</span>
+                            </th>
+                            <td>MAX</td>
+                            <td class="bg-warning">4,650,000</td>
+                            <td class="lpsong" rowspan="5" colspan="3">
+                                <table class="table table-bordered table-sm" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="3">Sports Dance - 8 Direction
+                                            <br>Passion - Paso Doble
+                                            <br>170bpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lpreq" rowspan="5">Sync: 7
+                                            <br>Perfect: 30
+                                            <br>Score: 350,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 6
+                                            <br>Perfect: 25
+                                            <br>Score: 300,000</td>
+                                        <td class="lpreq" rowspan="5">Sync: 5
+                                            <br>Perfect: 20
+                                            <br>Score: 250,000</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+<p>Credits to <a href="https://audition.hanbiton.com/Guide/WikiGuideView.aspx?documentKey=830" target="_blank">Audition Hanbiton</a>&nbsp;thanks to Solfege.</p>
+</div>
+
+<script type="text/javascript" src="links.js"></script>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
